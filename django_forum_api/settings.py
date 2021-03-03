@@ -136,7 +136,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 AUTH_USER_MODEL = 'users.CustomUser'
 
 CORS_ALLOWED_ORIGINS = [
-    "https://django-forum-client.herokuapp.com",
+    "django-forum-api.herokuapp.com",
     "http://localhost:1234",
 ]
 
