@@ -138,6 +138,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 CORS_ALLOWED_ORIGINS = [
     "https://django-forum-api.herokuapp.com",
+    "https://django-forum-client.herokuapp.com",
     "http://localhost:1234",
 ]
 
