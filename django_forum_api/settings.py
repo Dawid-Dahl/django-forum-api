@@ -25,7 +25,7 @@ SECRET_KEY = 'r9v5=w5%r=+^63+_!xuig(^7%kl)-7opl^!5lm1*t9q^wrm4_z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["django-forum-client.herokuapp.com",
+ALLOWED_HOSTS = ["django-forum-api.herokuapp.com",
                  "0.0.0.0", "localhost", "127.0.0.1"]
 
 
