@@ -7,7 +7,7 @@ from forum.models import Post, Category
 from .serializers import CategorySerializer, PostSerializer
 from rest_framework.decorators import api_view
 
-# Create your views here.
+# Categories
 
 
 class CategoryList(generics.ListAPIView):
@@ -23,6 +23,13 @@ class CategoryDetail(generics.RetrieveAPIView):
     def get_object(self, queryset=None, **kwargs):
         item = self.kwargs.get('pk')
         return get_object_or_404(Category, id=item)
+
+
+class CreateCategory(generics.CreateAPIView):
+    serializer_class = CategorySerializer
+    queryset = Category.objects.all()
+
+# Posts
 
 
 class PostList(generics.ListAPIView):
