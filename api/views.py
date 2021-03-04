@@ -1,3 +1,4 @@
+from django.db.models.fields import NullBooleanField
 from django.views import generic
 from rest_framework import viewsets, filters, generics, permissions
 from django.shortcuts import get_object_or_404
@@ -41,5 +42,13 @@ class PostDetail(generics.RetrieveAPIView):
 
 @api_view(["GET"])
 def posts_by_category(request, pk):
-    data = PostSerializer(Post.objects.filter(category=pk), many=True).data
+    data = PostSerializer(Post.objects.filter(
+        category=pk, parent__isnull=True), many=True).data
+    return Response(data)
+
+
+@api_view(["GET"])
+def replies_by_post(request, pk):
+    data = PostSerializer(Post.objects.filter(
+        parent=pk), many=True).data
     return Response(data)
